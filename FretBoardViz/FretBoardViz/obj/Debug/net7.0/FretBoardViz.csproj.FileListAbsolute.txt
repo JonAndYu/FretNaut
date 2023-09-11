@@ -1,0 +1,14 @@
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\bin\Debug\net7.0\FretBoardViz.exe
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\bin\Debug\net7.0\FretBoardViz.deps.json
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\bin\Debug\net7.0\FretBoardViz.runtimeconfig.json
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\bin\Debug\net7.0\FretBoardViz.dll
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\bin\Debug\net7.0\FretBoardViz.pdb
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\obj\Debug\net7.0\FretBoardViz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\obj\Debug\net7.0\FretBoardViz.AssemblyInfoInputs.cache
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\obj\Debug\net7.0\FretBoardViz.AssemblyInfo.cs
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\obj\Debug\net7.0\FretBoardViz.csproj.CoreCompileInputs.cache
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\obj\Debug\net7.0\FretBoardViz.dll
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\obj\Debug\net7.0\refint\FretBoardViz.dll
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\obj\Debug\net7.0\FretBoardViz.pdb
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\obj\Debug\net7.0\FretBoardViz.genruntimeconfig.cache
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretBoardViz\obj\Debug\net7.0\ref\FretBoardViz.dll
