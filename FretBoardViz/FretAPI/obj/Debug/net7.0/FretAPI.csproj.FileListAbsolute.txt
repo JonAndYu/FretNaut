@@ -31,3 +31,4 @@ C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\ref
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\FretAPI.pdb
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\FretAPI.genruntimeconfig.cache
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\ref\FretAPI.dll
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\Tunings.json

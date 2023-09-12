@@ -1,0 +1,22 @@
+[
+  {
+    "instrument": "Guitar",
+    "name": "Standard",
+    "tuning": [ "E", "A", "D", "G", "B", "E" ]
+  },
+  {
+    "instrument": "Guitar",
+    "name": "Drop D",
+    "tuning": [ "D", "A", "D", "G", "B", "E" ]
+  },
+  {
+    "instrument": "Bass",
+    "name": "Standard",
+    "tuning": [ "E", "A", "D", "G"]
+  },
+  {
+    "instrument": "Bass",
+    "name": "Drop D",
+    "tuning": [ "D", "A", "D", "G"]
+  }
+]
