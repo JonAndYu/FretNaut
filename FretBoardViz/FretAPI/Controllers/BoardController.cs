@@ -10,25 +10,25 @@ namespace FretAPI.Controllers;
 [ApiController]
 public class BoardController : ControllerBase
 {
-    private readonly ITuningService _tuningService;
+    /*private readonly ITuningService _tuningService;
 
     public BoardController(ITuningService tuningService)
     {
         _tuningService = tuningService;
-    }
+    }*/
 
     // GET: api/Board
-    [HttpGet]
+    /*[HttpGet]
     public IEnumerable<Tunings> GetTunings()
     {
         // Retrieve and return all tuning objects
         return _tuningService.TuningList();
-    }
+    }*/
 
     // GET: api/Board/instrument/name
-    [HttpGet("{instrument}/{name}")]
+    /*[HttpGet("{instrument}/{name}")]
     public IEnumerable<string> GetTuning(string instrument, string name)
     {
         return _tuningService.Tuning(name, instrument);
-    }
+    }*/
 }

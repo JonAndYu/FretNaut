@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace FretAPI.Services;
 
-public class TuningService : ITuningService
+public class TuningService
 {
     private readonly ILogger<TuningService> _logger;
 
@@ -13,12 +13,12 @@ public class TuningService : ITuningService
         _logger = logger;
     }
 
-    public IEnumerable<string> Tuning(string name, string instrument)
+    /*public IEnumerable<string> Tuning(string name, string instrument)
     {
         return LookupTuning(name, instrument);
-    }
+    }*/
 
-    public IEnumerable<Tunings> TuningList()
+   /* public IEnumerable<Tunings> TuningList()
     {
         try
         {
@@ -64,5 +64,5 @@ public class TuningService : ITuningService
             _logger.LogError("Error looking up Tunings", ex);
             throw;
         }
-    }
+    }*/
 }

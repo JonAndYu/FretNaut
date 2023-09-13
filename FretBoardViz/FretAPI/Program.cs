@@ -15,7 +15,9 @@ public class Program
         builder.Services.AddControllers();
 
         // Register your ITuningService implementation
-        builder.Services.AddScoped<ITuningService, TuningService>();
+        /*services.AddScoped<IFretboardService, FretboardService>();
+        services.AddScoped<ITuningsService, TuningsService>();
+        services.AddScoped<IUserService, UserService>();*/
 
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
