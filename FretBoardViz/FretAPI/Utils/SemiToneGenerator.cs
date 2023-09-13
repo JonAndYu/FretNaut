@@ -21,7 +21,7 @@ public class SemitoneGenerator
             { "B", 11 }
         };
 
-    public static List<string> GetNext12Semitones(string startingNote, int numNotes)
+    public static List<string> GetNext12Semitones(string startingNote, int numNotes = 13)
     {
         if (!NoteOffsets.ContainsKey(startingNote))
         {
