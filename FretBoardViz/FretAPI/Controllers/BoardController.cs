@@ -1,5 +1,6 @@
 ﻿using FretAPI.Models;
 using FretAPI.Services;
+using FretAPI.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,11 +10,15 @@ namespace FretAPI.Controllers;
 [ApiController]
 public class BoardController : ControllerBase
 {
-    private readonly ITuningService _tuningService;
+    private readonly IGuitarTuningService _guitarTuningService;
+    private readonly IBassTuningService _bassTuningService;
 
-	public BoardController(ITuningService tuningService)
-	{
-		_tuningService = tuningService;
+    public BoardController(
+        IGuitarTuningService guitarTuningService,
+        IBassTuningService bassTuningService)
+    {
+        _guitarTuningService = guitarTuningService;
+        _bassTuningService = bassTuningService;
     }
 
     // GET: api/Board
@@ -21,7 +26,13 @@ public class BoardController : ControllerBase
     public IEnumerable<Tunings> GetTunings()
     {
         // Retrieve and return all tuning objects
-        var tunings = _tuningService.TuningList();
-        return tunings;
+        return _guitarTuningService.TuningList().Concat(_bassTuningService.TuningList());
+    }
+
+    // GET: api/Board/instrument/name
+    [HttpGet("{instrument}/{name}")]
+    public IEnumerable<string> GetTuning(string instrument, string name)
+    {
+        return _guitarTuningService.Tuning(name);
     }
 }

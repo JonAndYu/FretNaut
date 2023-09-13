@@ -11,4 +11,7 @@ public class Tunings
 
     [JsonPropertyName("instrument")]
     public required string Instrument { get; set; }
+
+    [JsonPropertyName("fretboard")]
+    public required List<List<string>> Fretboard { get; set; } 
 }
