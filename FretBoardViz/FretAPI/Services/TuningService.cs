@@ -1,20 +1,21 @@
 ﻿using FretAPI.Models;
+using System.Diagnostics.Metrics;
 using System.Text.Json;
 
 namespace FretAPI.Services;
-public abstract class TuningServiceBase : ITuningService
-{
-    private readonly ILogger<TuningServiceBase> _logger;
-    protected abstract string Instrument { get; }
 
-    public TuningServiceBase(ILogger<TuningServiceBase> logger)
+public class TuningService : ITuningService
+{
+    private readonly ILogger<TuningService> _logger;
+
+    public TuningService(ILogger<TuningService> logger)
     {
         _logger = logger;
     }
 
-    public IEnumerable<string> Tuning(string name)
+    public IEnumerable<string> Tuning(string name, string instrument)
     {
-        return LookupTuning(name);
+        return LookupTuning(name, instrument);
     }
 
     public IEnumerable<Tunings> TuningList()
@@ -24,7 +25,8 @@ public abstract class TuningServiceBase : ITuningService
             List<Tunings>? tuningSets = JsonSerializer.Deserialize<List<Tunings>>(File.ReadAllText("Tunings.json"));
 
             // Filter the list to include only specific instrument tunings
-            var instrumentTunings = tuningSets.Where(tuning => tuning.Instrument == Instrument);
+            // var instrumentTunings = tuningSets.Where(tuning => tuning.Instrument == Instrument);
+            var instrumentTunings = tuningSets;
 
             if (instrumentTunings.Any())
             {
@@ -42,13 +44,13 @@ public abstract class TuningServiceBase : ITuningService
         }
     }
 
-    private IEnumerable<string> LookupTuning(string name)
+    private IEnumerable<string> LookupTuning(string name, string instrument)
     {
         try
         {
             List<Tunings>? tuningSets = JsonSerializer.Deserialize<List<Tunings>>(File.ReadAllText("Tunings.json"));
 
-            Tunings? tuning = tuningSets.FirstOrDefault(x => x.Name == name && x.Instrument == Instrument);
+            Tunings? tuning = tuningSets.FirstOrDefault(x => x.Name == name && x.Instrument == instrument);
 
             if (tuning is null)
             {

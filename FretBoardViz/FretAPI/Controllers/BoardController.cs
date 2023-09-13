@@ -10,15 +10,11 @@ namespace FretAPI.Controllers;
 [ApiController]
 public class BoardController : ControllerBase
 {
-    private readonly IGuitarTuningService _guitarTuningService;
-    private readonly IBassTuningService _bassTuningService;
+    private readonly ITuningService _tuningService;
 
-    public BoardController(
-        IGuitarTuningService guitarTuningService,
-        IBassTuningService bassTuningService)
+    public BoardController(ITuningService tuningService)
     {
-        _guitarTuningService = guitarTuningService;
-        _bassTuningService = bassTuningService;
+        _tuningService = tuningService;
     }
 
     // GET: api/Board
@@ -26,13 +22,13 @@ public class BoardController : ControllerBase
     public IEnumerable<Tunings> GetTunings()
     {
         // Retrieve and return all tuning objects
-        return _guitarTuningService.TuningList().Concat(_bassTuningService.TuningList());
+        return _tuningService.TuningList();
     }
 
     // GET: api/Board/instrument/name
     [HttpGet("{instrument}/{name}")]
     public IEnumerable<string> GetTuning(string instrument, string name)
     {
-        return _guitarTuningService.Tuning(name);
+        return _tuningService.Tuning(name, instrument);
     }
 }

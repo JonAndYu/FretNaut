@@ -1,30 +1,40 @@
 using FretAPI.Services;
+using FretAPI.Utils;
 
-var builder = WebApplication.CreateBuilder(args);
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+        // Create or populate the Tunings.json file as needed
+        BaseTuningFileGenerator.CreateDefaultFile();
 
-builder.Services.AddControllers();
+        // Add services to the container.
 
-// Register your ITuningService implementation
-builder.Services.AddScoped<IGuitarTuningService, GuitarTuningService>();
-builder.Services.AddScoped<IBassTuningService, BassTuningService>();
+        builder.Services.AddControllers();
+
+        // Register your ITuningService implementation
+        builder.Services.AddScoped<ITuningService, TuningService>();
 
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+        var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-app.UseSwagger();
-app.UseSwaggerUI();
+        // Configure the HTTP request pipeline.
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+        app.UseHttpsRedirection();
 
-app.UseAuthorization();
+        app.UseAuthorization();
 
-app.MapControllers();
+        app.MapControllers();
 
-app.Run();
+        app.Run();
+    }
+}
+

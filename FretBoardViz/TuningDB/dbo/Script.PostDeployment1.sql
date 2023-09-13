@@ -13,18 +13,18 @@ if not exists (SELECT 1 FROM dbo.[Users])
 BEGIN
     INSERT INTO dbo.[Users] (Username, PasswordHash, Email)
     VALUES 
-        ("Admin", "password1", "example@google.com"),
-        ("Jon", "password", "example1@google.com");
+        ('Admin', 'password1', 'example@google.com'),
+        ('Jon', 'password', 'example1@google.com');
 END
 
 if not exists (SELECT 1 FROM dbo.[Tunings])
 BEGIN
     INSERT INTO dbo.[Tunings] (Name, Instrument, TuningValues, UserId)
     VALUES 
-        ("Standard", "Guitar", '["E", "A", "D", "G", "B", "E"]', 1),
-        ("Drop D", "Guitar", '["D", "A", "D", "G", "B", "E"]', 1),
-        ("Standard", "Bass", '["E", "A", "D", "G"]', 2),
-        ("Drop D", "Bass", '["D", "A", "D", "G"]', 2);
+        ('Standard', 'Guitar', '["E", "A", "D", "G", "B", "E"]', 1),
+        ('Drop D', 'Guitar', '["D", "A", "D", "G", "B", "E"]', 1),
+        ('Standard', 'Bass', '["E", "A", "D", "G"]', 2),
+        ('Drop D', 'Bass', '["D", "A", "D", "G"]', 2);
 END
 
 if not exists (SELECT 1 FROM dbo.[Fretboard])

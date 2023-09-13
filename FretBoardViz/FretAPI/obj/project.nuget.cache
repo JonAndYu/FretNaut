@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IUA2H1HFRBI6Oi7O1ieDkOLAkRJGqcXs7+rtpM7VxjoYfomIb1YQGiUc44M5EbwbpsH4kl2LmdhVJ0gCPHs83w==",
+  "dgSpecHash": "NSGC0A1s2/GE8p2DhQaMPlkxrOnf9cbvRvrSg/2j/9l7370E60pRijj2CUfq2y3vll/IlRTgWGP7RFHIXQUDTA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jon\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\FretAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Jon\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
     "C:\\Users\\Jon\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "C:\\Users\\Jon\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Jon\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",

@@ -1,16 +1,15 @@
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\appsettings.json
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\FretAPI.exe
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\FretAPI.deps.json
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\FretAPI.runtimeconfig.json
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\FretAPI.dll
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\FretAPI.pdb
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\appsettings.Development.json
-C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\appsettings.json
-C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\Tunings.json
-C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\FretAPI.deps.json
-C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\FretAPI.runtimeconfig.json
-C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\FretAPI.pdb
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\FretAPI.csproj.AssemblyReference.cache
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\FretAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\FretAPI.AssemblyInfoInputs.cache
@@ -32,3 +31,5 @@ C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\ref
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\FretAPI.pdb
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\FretAPI.genruntimeconfig.cache
 C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\obj\Debug\net7.0\ref\FretAPI.dll
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\Tunings.json
+C:\Users\Jon\source\repos\FretBoardViz\FretBoardViz\FretAPI\bin\Debug\net7.0\Dapper.dll

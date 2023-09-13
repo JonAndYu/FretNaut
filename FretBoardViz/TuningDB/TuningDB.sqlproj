@@ -72,4 +72,7 @@
   <ItemGroup>
     <PostDeploy Include="dbo\Script.PostDeployment1.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="TuningDB.publish.xml" />
+  </ItemGroup>
 </Project>

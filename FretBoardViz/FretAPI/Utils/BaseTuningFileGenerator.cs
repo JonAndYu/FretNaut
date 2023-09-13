@@ -1,26 +1,34 @@
-﻿using System;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace FretAPI.Utils;
 
 public static class BaseTuningFileGenerator
 {
     // Checks to see if there exists a Tunings.json file
-    public static Boolean checkFile()
+    public static bool CheckFile()
     {
-        string filePath = "../Tunings.json";
+        string filePath = "Tunings.json";
         return File.Exists(filePath);
+    }
+
+    public static void CreateDefaultFile()
+    {
+        if (!BaseTuningFileGenerator.CheckFile())
+        {
+            BaseTuningFileGenerator.GenerateFile();
+            BaseTuningFileGenerator.PopulateFile();
+        }
     }
 
     // Generates an empty Tunings.json file
     // If a file already exists, it delates it
-    public static void generateFile()
+    public static void GenerateFile()
     {
-        string filePath = "../Tunings.json"; // Replace with the desired file path
+        string filePath = "Tunings.json"; // Replace with the desired file path
 
         try
         {
-            if (BaseTuningFileGenerator.checkFile())
+            if (BaseTuningFileGenerator.CheckFile())
             {
                 File.Delete(filePath);
             }
@@ -33,20 +41,20 @@ public static class BaseTuningFileGenerator
     }
 
     // Generates Standard, Drop D for Base and Guitar
-    public static void populateFile()
+    public static void PopulateFile()
     {
         var objects = new List<Object>
         {
-            BaseTuningFileGenerator.generateEntry(instrument : "Guitar", name : "Standard", tuning : new List<string>{ "E", "A", "D", "G", "B", "E" }),
-            BaseTuningFileGenerator.generateEntry(instrument : "Guitar", name : "Drop D", tuning : new List<string>{ "D", "A", "D", "G", "B", "E" }),
-            BaseTuningFileGenerator.generateEntry(instrument : "Bass", name : "Standard", tuning : new List<string>{ "E", "A", "D", "G" }),
-            BaseTuningFileGenerator.generateEntry(instrument : "Bass", name : "Drop D", tuning : new List<string>{ "D", "A", "D", "G" })
+            BaseTuningFileGenerator.GenerateEntry(instrument : "Guitar", name : "Standard", tuning : new List<string>{ "E", "A", "D", "G", "B", "E" }),
+            BaseTuningFileGenerator.GenerateEntry(instrument : "Guitar", name : "Drop D", tuning : new List<string>{ "D", "A", "D", "G", "B", "E" }),
+            BaseTuningFileGenerator.GenerateEntry(instrument : "Bass", name : "Standard", tuning : new List<string>{ "E", "A", "D", "G" }),
+            BaseTuningFileGenerator.GenerateEntry(instrument : "Bass", name : "Drop D", tuning : new List<string>{ "D", "A", "D", "G" })
         };
 
         // Serializes teh list of objects to JSON
-        string jsonString = "[" + JsonSerializer.Serialize(objects) + "]";
+        string jsonString = JsonSerializer.Serialize(objects);
 
-        string filePath = "../Tunings.json";
+        string filePath = "Tunings.json";
 
         try
         {
@@ -62,7 +70,7 @@ public static class BaseTuningFileGenerator
     }
 
     // Generates Data for a single JSON entry
-    private static object generateEntry(string instrument, string name, List<string> tuning)
+    private static object GenerateEntry(string instrument, string name, List<string> tuning)
     {
         List<List<string>> fretboard = new List<List<string>>();
         foreach (string note in tuning)
