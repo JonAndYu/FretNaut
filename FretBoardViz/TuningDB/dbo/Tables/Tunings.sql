@@ -5,5 +5,5 @@
     Instrument NVARCHAR(50) NOT NULL, -- Instrument name
     TuningValues NVARCHAR(MAX) NOT NULL, -- JSON representation of tuning values (use NVARCHAR(MAX) for JSON storage)
     UserId INT NOT NULL, -- Foreign key to link tunings to users
-    FOREIGN KEY (UserId) REFERENCES Users(UserId) -- Create a foreign key relationship
+    FOREIGN KEY (UserId) REFERENCES Users(UserId) ON DELETE CASCADE -- Create a foreign key relationship
 )

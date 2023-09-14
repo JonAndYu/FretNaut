@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spUser_Insert]
+﻿CREATE PROCEDURE [dbo].[spUsers_Insert]
     @Username NVARCHAR(50),
     @PasswordHash NVARCHAR(255),
     @Email NVARCHAR(100)

@@ -63,11 +63,20 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Tunings.sql" />
     <Build Include="dbo\Tables\Users.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_GetAll.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_Get.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_Delete.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\spUsers_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spUsers_Get.sql" />
+    <Build Include="dbo\StoredProcedures\spUsers_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\spUsers_Insert.sql" />
     <Build Include="dbo\Tables\Fretboard.sql" />
+    <Build Include="dbo\StoredProcedures\spUsers_Update.sql" />
+    <Build Include="dbo\StoredProcedures\spFretboard_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spFretboard_Get.sql" />
+    <Build Include="dbo\StoredProcedures\spFretboard_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\spFretboard_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\spTunings_Get.sql" />
+    <Build Include="dbo\StoredProcedures\spTunings_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spTunings_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\spTunings_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\Script.PostDeployment1.sql" />
