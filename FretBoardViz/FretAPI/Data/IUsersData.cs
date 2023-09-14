@@ -4,10 +4,10 @@ namespace FretAPI.Data
 {
     public interface IUsersData
     {
-        Task DeleteUser(int id);
-        Task<UsersModel?> GetUser(int id);
+        Task DeleteUsers(int id);
+        Task<UsersModel?> GetUsers(int id);
         Task<IEnumerable<UsersModel>> GetUsers();
-        Task InsertUser(UsersModel user);
-        Task UpdateUser(UsersModel user);
+        Task InsertUsers(UsersModel user);
+        Task UpdateUsers(UsersModel user);
     }
 }

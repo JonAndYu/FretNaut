@@ -2,7 +2,7 @@
 	@Id int
 AS	
 BEGIN
-	SELECT UserId, Username, Email
+	SELECT UserId, Username, PasswordHash, Email
 	FROM dbo.[Users]
 	WHERE UserId = @Id
 END

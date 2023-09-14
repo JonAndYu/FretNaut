@@ -15,7 +15,7 @@ public class UsersData : IUsersData
     public Task<IEnumerable<UsersModel>> GetUsers() =>
         _db.LoadData<UsersModel, dynamic>(storedProcedure: "dbo.spUsers_GetAll", new { });
 
-    public async Task<UsersModel?> GetUser(int id)
+    public async Task<UsersModel?> GetUsers(int id)
     {
         var results = await _db.LoadData<UsersModel, dynamic>(
             storedProcedure: "dbo.spUsers_Get",
@@ -23,13 +23,13 @@ public class UsersData : IUsersData
         return results.FirstOrDefault();
     }
 
-    public Task InsertUser(UsersModel user) =>
+    public Task InsertUsers(UsersModel user) =>
         _db.SaveData(storedProcedure: "dbo.spUsers_Insert", new { user.Username, user.PasswordHash, user.Email });
 
-    public Task UpdateUser(UsersModel user) =>
+    public Task UpdateUsers(UsersModel user) =>
         _db.SaveData(storedProcedure: "dbo.spUsers_Update", user);
 
-    public Task DeleteUser(int id) =>
+    public Task DeleteUsers(int id) =>
         _db.SaveData(storedProcedure: "dbo.spUsers_Delete", new { UserId = id });
 
 }

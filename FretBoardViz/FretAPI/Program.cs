@@ -1,3 +1,5 @@
+using FretAPI.Data;
+using FretAPI.DbAccess;
 using FretAPI.Services;
 using FretAPI.Utils;
 
@@ -14,10 +16,19 @@ public class Program
 
         builder.Services.AddControllers();
 
-        // Register your ITuningService implementation
-        services.AddScoped<IFretboardService, FretboardService>();
-        services.AddScoped<ITuningsService, TuningsService>();
-        services.AddScoped<IUserService, UsersService>();
+        // Register SQL
+        builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+
+        // Register your services
+        builder.Services.AddScoped<IFretboardService, FretboardService>();
+        builder.Services.AddScoped<IUsersService, UsersService>();
+        builder.Services.AddScoped<ITuningsService, TuningsService>();
+
+        // Register your data access classes
+        // TODO: Compare the differences between AddSingleton and AddScope.
+        builder.Services.AddSingleton<IFretboardData, FretboardData>();
+        builder.Services.AddSingleton<IUsersData, UsersData>();
+        builder.Services.AddSingleton<ITuningsData, TuningsData>();
 
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

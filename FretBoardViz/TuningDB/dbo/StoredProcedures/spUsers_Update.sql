@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[spUsers_Update]
     @UserId INT,
-    @NewUsername NVARCHAR(50),
-    @NewPasswordHash NVARCHAR(255),
-    @NewEmail NVARCHAR(100)
+    @NewUsername NVARCHAR(50) = NULL,
+    @NewPasswordHash NVARCHAR(255) = NULL,
+    @NewEmail NVARCHAR(100) = NULL
 AS
 BEGIN
     -- Check if the @UserId exists
@@ -10,9 +10,9 @@ BEGIN
     BEGIN
         -- Update the user's information
         UPDATE [dbo].[Users]
-        SET Username = @NewUsername,
-            PasswordHash = @NewPasswordHash,
-            Email = @NewEmail
+        SET Username = ISNULL(@NewUsername, Username),
+            PasswordHash = ISNULL(@NewPasswordHash, PasswordHash),
+            Email = ISNULL(@NewEmail, Email)
         WHERE UserId = @UserId;
 
         -- Return a success status or message

@@ -15,7 +15,7 @@ public class FretboardData : IFretboardData
     public Task<IEnumerable<FretboardModel>> GetUsers() =>
         _db.LoadData<FretboardModel, dynamic>(storedProcedure: "dbo.spFretboard_GetAll", new { });
 
-    public async Task<FretboardModel?> GetFretboard(int id)
+    public async Task<FretboardModel?> GetAllFretboards(int id)
     {
         var results = await _db.LoadData<FretboardModel, dynamic>(
             storedProcedure: "dbo.spFretboard_Get",
