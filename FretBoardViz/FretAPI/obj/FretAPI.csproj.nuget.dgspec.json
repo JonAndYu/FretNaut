@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jon\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\FretAPI.csproj": {}
+    "C:\\Users\\jonyu\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\FretAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jon\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\FretAPI.csproj": {
+    "C:\\Users\\jonyu\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\FretAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jon\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\FretAPI.csproj",
+        "projectUniqueName": "C:\\Users\\jonyu\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\FretAPI.csproj",
         "projectName": "FretAPI",
-        "projectPath": "C:\\Users\\Jon\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\FretAPI.csproj",
-        "packagesPath": "C:\\Users\\Jon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jon\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\obj\\",
+        "projectPath": "C:\\Users\\jonyu\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\FretAPI.csproj",
+        "packagesPath": "C:\\Users\\jonyu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jonyu\\source\\repos\\FretBoardViz\\FretBoardViz\\FretAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jonyu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,16 +37,12 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Dapper": {
               "target": "Package",
               "version": "[2.0.151, )"
-            },
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[7.0.10, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
@@ -67,8 +63,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -80,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

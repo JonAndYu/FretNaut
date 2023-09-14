@@ -5,7 +5,7 @@ namespace FretAPI.Models;
 
 public class FretboardModel
 {
-    public required int TuningId { get; set; }
+    public int TuningId { get; set; }
 
     // Use the [JsonIgnore] attribute to ignore this property when serializing to JSON
     [JsonIgnore]

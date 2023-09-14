@@ -1,10 +1,10 @@
 ﻿namespace FretAPI.Services
 {
-    public class UserService
+    public class UsersService
     {
         private readonly ILogger<TuningService> _logger;
 
-        public UserService(ILogger<TuningService> logger)
+        public UsersService(ILogger<TuningService> logger)
         {
             _logger = logger;
         }

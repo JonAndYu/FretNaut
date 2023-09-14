@@ -7,10 +7,10 @@ namespace FretAPI.Models;
 public class TuningsModel
 {
 
-    public required int TuningId { get; set; }
-    public required string Name { get; set; }
-    public required string Instrument { get; set; }
-    public required string TuningValues { get; set; }
-    public required int UserId {  get; set; }
+    public int TuningId { get; set; }
+    public string Name { get; set; }
+    public string Instrument { get; set; }
+    public string TuningValues { get; set; }
+    public int UserId {  get; set; }
 
 }
