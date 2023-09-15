@@ -1,6 +1,7 @@
 ﻿using FretAPI.Models;
 using FretAPI.Services;
 using FretAPI.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
@@ -22,7 +23,8 @@ public class FretboardController : ControllerBase
     // GET: api/Fretboard
     // 
     [HttpGet]
-    public async Task<IActionResult> GetFretboardModels()
+	[AllowAnonymous]
+	public async Task<IActionResult> GetFretboardModels()
     {
         try
         {
@@ -39,6 +41,7 @@ public class FretboardController : ControllerBase
 	// Get: api/Fretboard/{id}
 	// 
 	[HttpGet("GetFretboard/{id}")]
+	[AllowAnonymous]
 	public async Task<IActionResult> GetFretboard(string id)
 	{
 		try
@@ -53,7 +56,8 @@ public class FretboardController : ControllerBase
 		}
 	}
 
-	[HttpPost("CreateFretboard/{str}")]
+	[HttpPost("createfretboard/{str}")]
+	[AllowAnonymous]
 	public async Task<IActionResult> CreateFretboard(string str)
 	{
 		try
@@ -63,7 +67,6 @@ public class FretboardController : ControllerBase
 			{
 				return BadRequest($"Invalid tuning: {str}");
 			}
-			
 
 			// Process the data (save it to a database)
 			List<List<string>> notes = SemitoneGenerator
@@ -87,5 +90,57 @@ public class FretboardController : ControllerBase
 			// Return an error response
 			return StatusCode(StatusCodes.Status500InternalServerError, ex);
 		}
+	}
+
+	// DELETE: api/Fretboard/{str}
+	[HttpDelete("DeleteFretboard/{str}")]
+	public async Task<IActionResult> DeleteFretboard(string str)
+	{
+		try
+		{
+			// Validate the incoming data.
+			if (!NotesHelper.IsValidString(str))
+			{
+				return BadRequest($"Invalid tuning: {str}");
+			}
+
+			if ((await _fretboardService.GetFretboardById(str)) is null)
+			{
+				return BadRequest(StatusCodes.Status404NotFound);
+			}
+
+			await _fretboardService.DeleteFretboardById(str);
+
+			// Return a successful response
+			return Ok("Fretboard deleted successfully");
+
+
+		}
+		catch (Exception ex )
+		{
+			// Log the error
+			_logger.LogError(ex, "An error occurred while creating a fretboard");
+
+			// Return an error response
+			return StatusCode(StatusCodes.Status500InternalServerError, ex);
+		}
+	}
+
+	// Get: api/FretboardNotes/{str}
+	// 
+	[HttpGet("notes/{str}")]
+	[AllowAnonymous]
+	public IActionResult GetFretboardNotes(string str)
+	{
+		// Validate the incoming data.
+		if (!NotesHelper.IsValidString(str))
+		{
+			return BadRequest($"Invalid tuning: {str}");
+		}
+
+		// Process the data (save it to a database)
+		List<List<string>> notes = SemitoneGenerator
+			.CreateNotesArray(NotesHelper.ConvertToList(str));
+		return Ok(notes);
 	}
 }

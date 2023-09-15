@@ -36,7 +36,9 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        var app = builder.Build();
+		builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+
+		var app = builder.Build();
 
         // Configure the HTTP request pipeline.
         app.UseSwagger();
@@ -45,6 +47,9 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
+
+		app.UseHsts();
+		app.UseHttpsRedirection();
 
         app.MapControllers();
 
