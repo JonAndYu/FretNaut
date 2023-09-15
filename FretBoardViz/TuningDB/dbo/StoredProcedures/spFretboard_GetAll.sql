@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spFretboard_GetAll]
 AS
 BEGIN
-	SELECT TuningId, Fretboard
+	SELECT TuningValues, Notes
 	FROM dbo.[Fretboard]
 END

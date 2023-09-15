@@ -21,17 +21,17 @@ if not exists (SELECT 1 FROM dbo.[Tunings])
 BEGIN
     INSERT INTO dbo.[Tunings] (Name, Instrument, TuningValues, UserId)
     VALUES 
-        ('Standard', 'Guitar', '["E", "A", "D", "G", "B", "E"]', 1),
-        ('Drop D', 'Guitar', '["D", "A", "D", "G", "B", "E"]', 1),
-        ('Standard', 'Bass', '["E", "A", "D", "G"]', 2),
-        ('Drop D', 'Bass', '["D", "A", "D", "G"]', 2);
+        ('Standard', 'Guitar', 'EADGBE', 1),
+        ('Drop D', 'Guitar', 'DADGBE', 1),
+        ('Standard', 'Bass', 'EADG', 2),
+        ('Drop D', 'Bass', 'DADG', 2);
 END
 
 if not exists (SELECT 1 FROM dbo.[Fretboard])
 BEGIN
-    INSERT INTO [dbo].[Fretboard] (TuningId, Fretboard)
+    INSERT INTO [dbo].[Fretboard] (TuningValues, Notes)
 VALUES
-    (1, '[
+    ('EADGBE', '[
             ["E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E"],
             ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"],
             ["D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D"],
@@ -39,7 +39,7 @@ VALUES
             ["B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"],
             ["E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E"]
         ]'),
-    (2,  '[
+    ('DADGBE',  '[
             ["D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D"],
             ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"],
             ["D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D"],
@@ -47,13 +47,13 @@ VALUES
             ["B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"],
             ["E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E"]
         ]'),
-    (3, '[
+    ('EADG', '[
             ["E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E"],
             ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"],
             ["D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D"],
             ["G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]
         ]'),
-    (4,  '[
+    ('DADG',  '[
             ["D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D"],
             ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"],
             ["D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D"],

@@ -5,27 +5,27 @@ namespace FretAPI.Models;
 
 public class FretboardModel
 {
-    public int TuningId { get; set; }
+    public string TuningValues { get; set; }
 
     // Use the [JsonIgnore] attribute to ignore this property when serializing to JSON
     [JsonIgnore]
-    public List<string> FretboardList
+    public List<string> NotesList
     {
         get
         {
-            if (string.IsNullOrEmpty(Fretboard))
+            if (string.IsNullOrEmpty(Notes))
             {
                 return new List<string>();
             }
 
-            return JsonSerializer.Deserialize<List<string>>(Fretboard);
+            return JsonSerializer.Deserialize<List<string>>(Notes);
         }
         set
         {
-            Fretboard = JsonSerializer.Serialize(value);
+            Notes = JsonSerializer.Serialize(value);
         }
     }
 
     // This property will be used for database storage and retrieval
-    public string Fretboard { get; set; }
+    public string Notes { get; set; }
 }

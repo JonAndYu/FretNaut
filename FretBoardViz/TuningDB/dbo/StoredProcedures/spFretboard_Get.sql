@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[spFretboard_Get]
-	@Id int
+	@TuningValues NVARCHAR(25)
 AS
 BEGIN
-	SELECT TuningId, Fretboard
+	SELECT TuningValues, Notes
 	FROM dbo.[Fretboard]
-	WHERE TuningId = @Id
+	WHERE TuningValues = @TuningValues
 END

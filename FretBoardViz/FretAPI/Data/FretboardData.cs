@@ -12,20 +12,20 @@ public class FretboardData : IFretboardData
         _db = db;
     }
 
-    public Task<IEnumerable<FretboardModel>> GetUsers() =>
+    public Task<IEnumerable<FretboardModel>> GetAllFretboards() =>
         _db.LoadData<FretboardModel, dynamic>(storedProcedure: "dbo.spFretboard_GetAll", new { });
 
-    public async Task<FretboardModel?> GetAllFretboards(int id)
+    public async Task<FretboardModel?> GetFretboard(string tuningValues)
     {
         var results = await _db.LoadData<FretboardModel, dynamic>(
             storedProcedure: "dbo.spFretboard_Get",
-            new { TuningId = id });
+            new { TuningValues = tuningValues });
         return results.FirstOrDefault();
     }
 
     public Task InsertFretboard(FretboardModel fretboard) =>
-        _db.SaveData(storedProcedure: "dbo.spFretboard_Insert", new { fretboard.TuningId, fretboard.Fretboard });
+        _db.SaveData(storedProcedure: "dbo.spFretboard_Insert", new { TuningValues = fretboard.TuningValues, Notes = fretboard.Notes });
 
-    public Task DeleteFretboard(int id) =>
-        _db.SaveData(storedProcedure: "dbo.spFretboard_Delete", new { TuningId = id });
+    public Task DeleteFretboard(string tuningValues) =>
+        _db.SaveData(storedProcedure: "dbo.spFretboard_Delete", new { TuningValues = tuningValues });
 }

@@ -11,7 +11,7 @@ public class FretboardService : IFretboardService
     public FretboardService(ILogger<FretboardService> logger, IFretboardData fretboardData)
     {
         _logger = logger;
-        _fretboardData = fretboardData);
+        _fretboardData = fretboardData;
     }
 
     // Add methods for Fretboard-related operations here
@@ -29,15 +29,15 @@ public class FretboardService : IFretboardService
         }
     }
 
-    public async Task<FretboardModel?> GetFretboardById(int id)
+    public async Task<FretboardModel?> GetFretboardById(string tuningValues)
     {
         try
         {
-            return await _fretboardData.GetFretboard(id);
+            return await _fretboardData.GetFretboard(tuningValues);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"Error occurred while getting fretboard with ID {id}");
+            _logger.LogError(ex, $"Error occurred while getting fretboard with ID {tuningValues}");
             throw;
         }
     }
@@ -57,15 +57,15 @@ public class FretboardService : IFretboardService
         }
     }
 
-    public async Task DeleteFretboardById(int id)
+    public async Task DeleteFretboardById(string tuningValues)
     {
         try
         {
-            await _fretboardData.DeleteFretboard(id);
+            await _fretboardData.DeleteFretboard(tuningValues);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"Error occurred while deleting fretboard with ID {id}");
+            _logger.LogError(ex, $"Error occurred while deleting fretboard with tuningValue {tuningValues}");
             throw;
         }
     }

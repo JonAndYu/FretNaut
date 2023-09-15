@@ -19,6 +19,7 @@ public class SqlDataAccess : ISqlDataAccess
         U parameters,
         string connectionId = "Default")
     {
+        var temp = _configuration.GetConnectionString(connectionId);
         using IDbConnection connection = new SqlConnection(_configuration.GetConnectionString(connectionId));
         return await connection.QueryAsync<T>(storedProcedure, parameters,
             commandType: CommandType.StoredProcedure);

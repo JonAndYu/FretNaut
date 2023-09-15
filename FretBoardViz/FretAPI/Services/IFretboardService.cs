@@ -4,9 +4,9 @@ namespace FretAPI.Services
 {
     public interface IFretboardService
     {
-        Task DeleteFretboardById(int id);
+        Task DeleteFretboardById(string tuningValues);
         Task<IEnumerable<FretboardModel>> GetAllFretboards();
-        Task<FretboardModel?> GetFretboardById(int id);
+        Task<FretboardModel?> GetFretboardById(string tuningValues);
         Task InsertFretboard(FretboardModel fretboard);
     }
 }

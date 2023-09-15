@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[spTunings_Insert]
     @Name NVARCHAR(100),
     @Instrument NVARCHAR(50),
-    @TuningValues NVARCHAR(MAX),
+    @TuningValues NVARCHAR(25),
     @UserId INT
 AS
 BEGIN

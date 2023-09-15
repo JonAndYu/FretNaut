@@ -14,8 +14,8 @@ BEGIN
 
     -- Insert default tunings for the user into the Tunings table
     INSERT INTO dbo.[Tunings] (Name, Instrument, TuningValues, UserId)
-    VALUES ('Standard', 'Guitar', '["E", "A", "D", "G", "B", "E"]', @UserId);
+    VALUES ('Standard', 'Guitar', 'EADGBE', @UserId);
 
     INSERT INTO dbo.[Tunings] (Name, Instrument, TuningValues, UserId)
-    VALUES ('Standard', 'Bass', '["E", "A", "D", "G"]', @UserId);
+    VALUES ('Standard', 'Bass', 'EADG', @UserId);
 END;

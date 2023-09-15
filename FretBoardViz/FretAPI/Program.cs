@@ -2,6 +2,7 @@ using FretAPI.Data;
 using FretAPI.DbAccess;
 using FretAPI.Services;
 using FretAPI.Utils;
+using Microsoft.Extensions.Logging;
 
 public class Program
 {
@@ -10,7 +11,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Create or populate the Tunings.json file as needed
-        BaseTuningFileGenerator.CreateDefaultFile();
+        // BaseTuningFileGenerator.CreateDefaultFile();
 
         // Add services to the container.
 

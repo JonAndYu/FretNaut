@@ -1,14 +1,14 @@
 ﻿CREATE PROCEDURE [dbo].[spFretboard_Insert]
-	@TuningId int,
+	@TuningValues NVARCHAR(25),
 	@Notes NVARCHAR(MAX)
 AS
 BEGIN
-	-- Check if the @TuningId exists
-    IF EXISTS (SELECT 1 FROM [dbo].[Fretboard] WHERE TuningId = @TuningId)
+	-- Check if the @TuningValue exists
+    IF NOT EXISTS (SELECT 1 FROM [dbo].[Fretboard] WHERE TuningValues = @TuningValues)
     BEGIN
         -- Update the user's information
-        INSERT INTO [dbo].[Fretboard] (TuningId, Fretboard)
-        VALUES (@TuningId,@Notes);
+        INSERT INTO [dbo].[Fretboard] (TuningValues, Notes)
+        VALUES (@TuningValues,@Notes);
 
         -- Return a success status or message
         SELECT 'Fretboard information updated successfully' AS [Status];
@@ -16,6 +16,6 @@ BEGIN
     ELSE
     BEGIN
         -- Return an error status or message if the user doesn't exist
-        SELECT 'Tuning not found. Update operation failed' AS [Status];
+        SELECT 'Fretboard already exists' AS [Status];
     END
 END

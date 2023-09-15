@@ -28,7 +28,7 @@ public class SemitoneGenerator
             throw new ArgumentException("Invalid starting note.");
         }
 
-        List<string> semitones = new List<string>() { startingNote };
+        List<string> semitones = new List<string>() { };
 
         int currentOffset = NoteOffsets[startingNote];
 
@@ -44,4 +44,15 @@ public class SemitoneGenerator
 
         return semitones;
     }
+
+	public static List<List<string>> CreateNotesArray(List<string> notes)
+	{
+		List<List<string>> res = new List<List<string>>();
+
+		foreach (string note in notes)
+		{
+			res.Add(GetNext12Semitones(note));
+		}
+		return res;
+	}
 }
