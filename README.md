@@ -1,5 +1,8 @@
 # FretNaut API
 
+For local development,
+CORS services were added to help with local development.
+
 FretNaut is my way of combining my knowledge (computer science) with my passion (guitar) and forcing myself to learn a bit more about music. I've been stagnant in my music theory lessosn so as I gain a better understanding I hope to update this api with relevant topics. Currently it's base functionality allows an individual to request a tuning and be given the notes up to the 12th fret on a stringed instrument. Often when you search for ntoes on a fretboard you only see images of guitars in standard tuning.
 ![image](https://github.com/JonAndYu/FretBoardViz/assets/64448283/f9ffd5ae-bb3b-4983-a9d9-ffd705facf7a)
 
